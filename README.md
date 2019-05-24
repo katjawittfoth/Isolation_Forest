@@ -16,12 +16,12 @@ The random partitioning has a noticeable shorter **path length** for anomalies, 
 ## Limitations and Improvements
 One of the known **weaknesses** of the original isolation forest algorithm is that it can't handle noisy data with many features. To tackle this, I wrote an **improved version** of the algorithm that chooses better features and better splits when creating the trees. 
 
-I narrow my features to "good" features. I base my decision on premises that if there are outliers (anomalies) in the data, then the best feature to detect them would likely be not normally distributed. We know that, the median and the mean in a Gaussian distribution are equal. Thus, for all feature, I am calculating the difference between median and mean, normalizing it by the standard deviation. Then, I determine a "good" feature as the one with the median/mean difference above a threshold. I choose threshold as an average of all normalized differences between median and mean. My approach successfully eliminates noisy features.
+I narrow my features to "good" features. I base my decision on premises that if there are outliers (anomalies) in the data, then the best feature to detect them would likely be not normally distributed. We know that, the median and the mean in a Gaussian distribution are equal. Thus, for all feature, I am calculating normalized difference between median and mean, and define a "good" feature as the one with the difference above a threshold. I choose threshold as an average of all differences between median and mean. My approach successfully eliminates noisy features.
 
-Another improvement I have implemented is how I choose the spit. Rather than randomly choosing feature/value combination, I am searching for the "best split" in a while loop by selecting feature from "good" features and a split value between min and max. The best split is the split with the smallest left or right partition, meaning with the most isolation. 
+Another improvement I have implemented is how I choose the spit point. Rather than random choice, I am searching for the "best split" in a while loop by selecting feature from "good" features and a split value between min and max. The best split is the split with the smallest left or right partition, meaning with the most isolation. 
 
 
 [My implementation of iForest](https://github.com/katjawittfoth/Isolation_Forest/blob/master/iforest.py)
 <br>
-[Application and visualization of the algorithm on cancer data](https://github.com/katjawittfoth/Isolation_Forest/blob/master/iForest_visualization.ipynb)
+[Application and visualization of the algorithm on Cancer data](https://github.com/katjawittfoth/Isolation_Forest/blob/master/iForest_visualization.ipynb)
 
