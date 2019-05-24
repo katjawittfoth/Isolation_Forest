@@ -23,5 +23,5 @@ Another improvement I have implemented is how I choose the spit point. Rather th
 
 [My implementation of iForest](https://github.com/katjawittfoth/Isolation_Forest/blob/master/iforest.py)
 <br>
-[Application and visualization of the algorithm on Cancer data](https://github.com/katjawittfoth/Isolation_Forest/blob/master/iForest_visualization.ipynb)
+[Application and visualization of my algorithm on Cancer data](https://github.com/katjawittfoth/Isolation_Forest/blob/master/iForest_visualization.ipynb)
 
